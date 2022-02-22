@@ -1,70 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Explore</title>
-    <link href="css/explore.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <title>Explore</title>
+  <link href="../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../vendors/fontawesome/css/all.min.css" rel="stylesheet"/>
+  <link href="css/explore.css" rel="stylesheet"/>
 </head>
-<body class="wd-background">
-    <div class="wd-container">
+<body class="bg-black">
+  <div class="container pt-2 pb-2">
+    <div class="row">
 
-        <div class="wd-search">
-            <input class="wd-rounded-corners wd-padding-fat" placeholder="Search Tuiter"/>
+      <!-- Left Sidebar -->
+      <div class="col-2 col-lg-1 col-xl-2 col-xxl-2">
+        <div class="wd-left-sidebar list-group mb-2">
+          <i class="fab fa-twitter list-group-item fa-2x" style="color:#1DA1F2;"></i>
+          <a href="home.html" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-house-chimney"></i>
+            <span class="d-none d-xl-inline">Home</span>
+          </a>
+          <a href="explore.html" class="list-group-item list-group-item-action active" aria-current="true">
+            <i class="fa-solid fa-hashtag"></i>
+            <span class="d-none d-xl-inline">Explore</span>
+          </a>
+          <a href="notifications.html" class="list-group-item list-group-item-action">
+            <i class="fa-regular fa-bell"></i>
+            <span class="d-none d-xl-inline">Notifications</span>
+          </a>
+          <a href="messages.html" class="list-group-item list-group-item-action">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="d-none d-xl-inline">Messages</span>
+          </a>
+          <a href="bookmarks.html" class="list-group-item list-group-item-action">
+            <i class="fa-regular fa-bookmark"></i>
+            <span class="d-none d-xl-inline">Bookmarks</span>
+          </a>
+          <a href="lists.html" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-list"></i>
+            <span class="d-none d-xl-inline">Lists</span>
+          </a>
+          <a href="profile.html" class="list-group-item list-group-item-action">
+            <i class="fa-regular fa-user"></i>
+            <span class="d-none d-xl-inline">Profile</span>
+          </a>
+          <a href="more.html" class="list-group-item list-group-item-action">
+            <span class="fa-stack small">
+              <i class="fa-regular fa-circle fa-stack-2x"></i>
+              <i class="fa-solid fa-ellipsis fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="d-none d-xl-inline">More</span>
+          </a>
         </div>
-
-        <div class="wd-gear">
-            <a href="explore-settings.html"><img src="images/settings-icon.png"/></a>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary override" type="button">Tuit</button>
         </div>
+      </div>
 
-        <div class="wd-links">
-            <ul>
-                <li><a class="active" href="for-you.html">For you</a></li>
-                <li><a href="for-you.html">Trending</a></li>
-                <li><a href="for-you.html">COVID-19</a></li>
-                <li><a href="for-you.html">News</a></li>
-                <li><a href="for-you.html">Sports</a></li>
-                <li><a href="for-you.html">Entertainment</a></li>
+      <!-- Main Content -->
+      <div class="col-10 col-lg-7 col-xl-6 col-xxl-6 ps-4 pe-4">
+        <!-- Search Bar -->
+        <div class="wd-search-bar row mb-2">
+          <div class="d-flex align-items-center">
+            <div class="flex-grow-1 input-icon me-4">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" class="form-control" placeholder="Search Tuiter"/>
+            </div>
+            <a href="explore-settings.html"><i class="fa-solid fa-gear"></i></a>
+          </div>
+        </div>
+        <!-- Tabs -->
+        <div class="wd-tabs row">
+          <ul class="nav d-flex justify-content-around align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="for-you.html">For you</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="trending.html">Trending</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sports.html">Sports</a>
+            </li>
+            <li class="nav-item d-none d-md-inline-block">
+              <a class="nav-link" href="entertainment.html">Entertainment</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Card -->
+        <div class="wd-card row">
+          <div class="card text-black">
+            <img src="images/starship.jpeg" class="card-img-top">
+            <div class="card-img-overlay">
+              <h3 class="card-title">SpaceX's Starship</h3>
+            </div>
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="me-4">
+                <p class="card-text mb-0">Web Development</p>
+                <p class="card-title mb-0">ReactJS <i class="fa-solid fa-circle-check"></i> <span class="card-text">- 2h</span></p>
+                <p class="card-title small mb-0">React.js is a component based front end library that makes it very easy to
+                  build Single Page Applications or SPAs</p>
+              </div>
+              <i class="fa-brands fa-react fa-4x" style="color: dodgerblue;"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="me-4">
+                    <p class="card-title mb-0">JavaScript <i class="fa-solid fa-circle-check"></i> <span class="card-text">- 2h</span></p>
+                    <p class="card-title small mb-0">JavaScript is programming language that can run on browsers as well as desktops</p>
+                    <p class="card-text mb-0">123K Tuits</p>
+                  </div>
+                  <img src="images/javascript.png" style="width: 60px; height: 60px; border-radius: 10px;"/>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="me-4">
+                    <p class="card-text mb-0">Web Development</p>
+                    <p class="card-title mb-0">jQuery</p>
+                    <p class="card-text mb-0">123K Tuits</p>
+                  </div>
+                  <img src="images/jquery.png" style="width: 60px; height: 60px; border-radius: 10px;"/>
+                </div>
+              </li>
             </ul>
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="me-4">
+                <p class="card-text mb-0">Web Development</p>
+                <p class="card-title mb-0">NodeJS <i class="fa-solid fa-circle-check"></i> <span class="card-text">- 2h</span></p>
+                <p class="card-text mb-0">123K Tuits</p>
+              </div>
+              <i class="fa-brands fa-node-js fa-4x" style="color: mediumseagreen"></i>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="wd-element-explore">
-            <img src="images/dots.png" class="wd-img-dots"/>
-            <p class="wd-heading-element">Trending in Tech</p>
-            <p class="wd-content-element">Meta and Salesforce present differing takes on the metaverse</p>
-            <p class="wd-heading-element">55.5K Tuits</p>
-        </div>
-
-        <div class="wd-element-explore">
-            <img src="images/dots.png" class="wd-img-dots"/>
-            <p class="wd-heading-element">Trending in Sports</p>
-            <p class="wd-content-element">Rams’ Aggressive Roster Build Pays Off in Super Bowl Win</p>
-            <p class="wd-heading-element">5,218 Tuits</p>
-        </div>
-
-        <div class="wd-element-explore">
-            <img src="images/eileen-gu.jpeg" class="wd-image-element" />
-            <p class="wd-heading-element-white">CNN World<span class="wd-heading-element"> . Yesterday</span></p>
-            <p class="wd-content-element">Teenage Olympic sensation Eileen Gu wins gold. And crashes the Chinese internet</p>
-        </div>
-
-        <div class="wd-element-explore">
-            <img src="images/spacex.png" class="wd-image-element" />
-            <p class="wd-heading-element-white">The New York Times<span class="wd-heading-element"> . Today</span></p>
-            <p class="wd-content-element">What Elon Musk Did and Didn't Reveal About SpaceX's Starship Rocket</p>
-        </div>
-
-        <div class="wd-element-explore">
-            <img src="images/covid.png" class="wd-image-element"/>
-            <p class="wd-heading-element">COVID-19 . LIVE</p>
-            <p class="wd-content-element">COVID-19: News and Updates for Massachusetts</p>
-        </div>
-
-        <div class="wd-element-explore">
-            <img src="images/valentine.jpeg" class="wd-image-element"/>
-            <p class="wd-heading-element">Valentine's Day . LIVE</p>
-            <p class="wd-content-element">Love or Hate Valentine's Day? Either Way, There Are Movies for You</p>
-        </div>
+      <!-- Right Sidebar -->
+      <div class="d-none d-lg-block col-4">
+        <ul class="wd-right-sidebar list-group">
+          <li class="list-group-item header">Who to follow</li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start">
+              <img class="wd-icon-img" src="images/java.jpeg"/>
+              <div>
+                <p class="mb-0 fw-bold">Java <i class="fa-solid fa-circle-check"></i></p>
+                <small>@Java</small>
+              </div>
+            </div>
+            <button class="btn btn-light">Follow</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start">
+              <img class="wd-icon-img" src="images/relativity-space.jpeg"/>
+              <div>
+                <p class="mb-0 fw-bold">Relativity Space <i class="fa-solid fa-circle-check"></i></p>
+                <small>@relativityspace</small>
+              </div>
+            </div>
+            <button class="btn btn-light">Follow</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start">
+              <img class="wd-icon-img" src="images/virgin-galactic.png"/>
+              <div>
+                <p class="mb-0 fw-bold">Virgin Galactic <i class="fa-solid fa-circle-check"></i></p>
+                <small>@virgingalactic</small>
+              </div>
+            </div>
+            <button class="btn btn-light">Follow</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start">
+              <img class="wd-icon-img" src="images/nasa.jpeg"/>
+              <div>
+                <p class="mb-0 fw-bold">NASA <i class="fa-solid fa-circle-check"></i></p>
+                <small>@NASA</small>
+              </div>
+            </div>
+            <button class="btn btn-light">Follow</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start">
+              <img class="wd-icon-img" src="images/tesla.png"/>
+              <div>
+                <p class="mb-0 fw-bold">Tesla <i class="fa-solid fa-circle-check"></i></p>
+                <small>@Tesla</small>
+              </div>
+            </div>
+            <button class="btn btn-light">Follow</button>
+          </li>
+        </ul>
+      </div>
 
     </div>
+  </div>
 </body>
 </html>
