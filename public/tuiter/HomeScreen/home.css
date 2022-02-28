@@ -1,0 +1,9 @@
+.fa-stack { left: -3px; top: -2px; }
+.fa-stack.small { font-size: 0.5em; }
+.wd-post.list-group-item { background-color: black; }
+.wd-post .card-body {
+    background-color: black;
+    border-top-color: #282c34;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
