@@ -1,0 +1,7 @@
+.wd-post.list-group-item { background-color: black; }
+.wd-post .card-body {
+    background-color: black;
+    border-top-color: #282c34;
+    border-top-style: solid;
+    border-top-width: 1px;
+}

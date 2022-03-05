@@ -1,0 +1,12 @@
+.input-icon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+.input-icon .form-control {
+    border-radius: 20px;
+    text-indent: 30px;
+}
+.card-img-overlay .card-title {
+    padding-top: 58.5%;
+}
