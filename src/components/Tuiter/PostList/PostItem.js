@@ -29,7 +29,7 @@ const PostItem = (
                 </div>
                 <p>{post.caption}</p>
                 <div className="card mb-3">
-                    <img src={post.image} alt="post image" className="card-img"/>
+                    <img src={post.image} alt="post" className="card-img"/>
                     <div className="card-body" style={{"display": `${post.title === '' ? "none" : "block"}`}}>
                         <div className="card-text">
                             <p className="mb-0">{post.title}</p>
