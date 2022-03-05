@@ -22,7 +22,7 @@ const PostSummaryItem = (
                     </div>
                     <p className="fw-bold mb-0">{post.title}</p>
                 </div>
-                <img src={post.image} width="80" height="80" className="rounded align-self-center"/>
+                <img src={post.image} alt="/tuiter/images/no-image.png" width="80" height="80" className="rounded align-self-center"/>
             </div>
         </li>
     );

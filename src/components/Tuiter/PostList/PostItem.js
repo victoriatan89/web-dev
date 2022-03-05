@@ -21,7 +21,7 @@ const PostItem = (
     }) => {
     return(
         <li className="wd-post list-group-item d-flex py-3">
-            <img src={post.avatarIcon} width="45px" height="45px" className="flex-shrink-0 rounded-circle me-3" />
+            <img src={post.avatarIcon} alt="/tuiter/images/no-image.png" width="45px" height="45px" className="flex-shrink-0 rounded-circle me-3" />
             <div className="w-100">
                 <div className="d-flex justify-content-between">
                     <p className="mb-0 fw-bold">{post.userName} <i className="fa-solid fa-circle-check"/> <small className="opacity-50 fw-normal">@{post.userHandle} - {post.time}</small></p>
@@ -29,7 +29,7 @@ const PostItem = (
                 </div>
                 <p>{post.caption}</p>
                 <div className="card mb-3">
-                    <img src={post.image} className="card-img"/>
+                    <img src={post.image} alt="/tuiter/images/no-image.png" className="card-img"/>
                     <div className="card-body" style={{"display": `${post.title === '' ? "none" : "block"}`}}>
                         <div className="card-text">
                             <p className="mb-0">{post.title}</p>
