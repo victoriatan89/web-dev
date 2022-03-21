@@ -3,9 +3,9 @@ import React from "react";
 const WhoToFollowListItem = (
     {
         who = {
-            "avatarIcon": '/tuiter/images/nasa.png',
-            "userName": 'NASA',
-            "userHandle": 'NASA'
+            avatarIcon: '/tuiter/images/nasa.png',
+            userName: 'NASA',
+            userHandle: 'NASA'
         }
     }) => {
     return (
