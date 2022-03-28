@@ -1,10 +1,11 @@
 import React from "react";
-import posts from "./posts.json"
 import PostSummaryItem from "./PostSummaryItem";
+import {useSelector} from "react-redux";
 
 const PostSummaryList = () => {
+    const posts = useSelector((state) => state.posts);
     return(
-        <ul className="list-group">
+        <ul className="list-group mb-2">
             {
                 posts.map(post => <PostSummaryItem post={post}/>)
             }

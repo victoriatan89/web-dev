@@ -1,24 +1,30 @@
 import React from "react"
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 import './index.css'
 
-const NavigationSidebar = (
-    {
-        active = 'explore'
-    }) => {
+const NavigationSidebar = () => {
+    const location = useLocation();
     return (
         <>
             <div className="list-group">
-                <Link to="/" className="list-group-item">
+                <Link to="/"
+                      className="list-group-item">
                     <i className="fab fa-twitter fa-fw"/>
                 </Link>
-                <Link to="/tuiter/home"
-                      className={`list-group-item list-group-item-action ${active === 'home' ? 'active' : ''}`}>
+                <Link to="/tuiter"
+                      className={`list-group-item list-group-item-action 
+                      ${
+                          location.pathname === "/tuiter" || 
+                          location.pathname === "/tuiter/" ? 'active' : ''
+                      }`}>
                     <i className="fa-solid fa-house-chimney fa-fw me-1"/>
                     <span className="d-none d-xl-inline">Home</span>
                 </Link>
                 <Link to="/tuiter/explore"
-                      className={`list-group-item list-group-item-action ${active === 'explore' ? 'active' : ''}`}>
+                      className={`list-group-item list-group-item-action 
+                      ${
+                          location.pathname === "/tuiter/explore" ? 'active' : ''
+                      }`}>
                     <i className="fa-solid fa-hashtag fa-fw me-1"/>
                     <span className="d-none d-xl-inline">Explore</span>
                 </Link>
@@ -38,7 +44,12 @@ const NavigationSidebar = (
                     <i className="fa-solid fa-list fa-fw me-1"/>
                     <span className="d-none d-xl-inline">Lists</span>
                 </Link>
-                <Link to="/" className="list-group-item list-group-item-action">
+                <Link to="/tuiter/profile"
+                      className={`list-group-item list-group-item-action 
+                      ${
+                          location.pathname === "/tuiter/profile" || 
+                          location.pathname === "/tuiter/profile/edit" ? 'active' : ''
+                      }`}>
                     <i className="fa-regular fa-user fa-fw me-1"/>
                     <span className="d-none d-xl-inline">Profile</span>
                 </Link>

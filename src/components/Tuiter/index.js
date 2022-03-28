@@ -1,58 +1,36 @@
 import React from "react";
+import {Outlet} from "react-router-dom";
 import NavigationSidebar from "./NavigationSidebar";
-import WhoToFollowListItem from "./WhoToFollowList/WhoToFollowListItem";
 import WhoToFollowList from "./WhoToFollowList";
-import PostSummaryItem from "./PostSummaryList/PostSummaryItem";
-import PostSummaryList from "./PostSummaryList";
-import ExploreComponent from "./ExploreScreen/ExploreComponent";
-import ExploreScreen from "./ExploreScreen";
-import PostItem from "./PostList/PostItem";
-import PostList from "./PostList";
-import HomeScreen from "./HomeScreen";
+import whoReducer from "./reducers/who-reducer";
+import tuitsReducer from "./reducers/tuits-reducer";
+import profileReducer from "./reducers/profile-reducer";
+import postsReducer from "./reducers/posts-reducer";
+import {combineReducers,createStore} from "redux";
+import {Provider} from "react-redux";
+const reducer = combineReducers({
+    tuits: tuitsReducer,
+    who: whoReducer,
+    profile: profileReducer,
+    posts: postsReducer
+});
+const store = createStore(reducer)
 
 const Tuiter = () => {
-    return(
-        <>
-            <NavigationSidebar/>
-            <NavigationSidebar active="home"/>
-            <WhoToFollowListItem/>
-            <WhoToFollowListItem who={{
-                avatarIcon: '/tuiter/images/virgin-galactic.png',
-                userName: 'Virgin Galactic',
-                userHandle: 'virgingalactic'
-            }}/>
-            <WhoToFollowList/>
-            <PostSummaryItem/>
-            <PostSummaryItem post={{
-                topic: 'Web Development',
-                userName: '',
-                title: 'jQuery',
-                time: 'last week',
-                image: '/tuiter/images/jquery.png',
-                tweets: '122K'
-            }}/>
-            <PostSummaryList/>
-            <ExploreComponent/>
-            <ExploreScreen/>
-            <PostItem/>
-            <PostItem post={{
-                avatarIcon: '/tuiter/images/new-york-post.png',
-                userName: 'New York Post',
-                userHandle: 'nypost',
-                time: '23h',
-                caption: "Grimes seen reading Karl Marx following split with world's richest man Elon Musk trib.al/nx2Gfaq",
-                image: '/tuiter/images/grimes.jpeg',
-                title: '',
-                content: '',
-                link: '',
-                linkName: '',
-                comments: '965',
-                retweets: '2.4K',
-                likes: '4K'
-            }}/>
-            <PostList/>
-            <HomeScreen/>
-        </>
-    )
+    return (
+        <Provider store={store}>
+            <div className="row mt-2">
+                <div className="col-2 col-lg-1 col-xl-2">
+                    <NavigationSidebar/>
+                </div>
+                <div className="col-10 col-lg-7 col-xl-6">
+                    <Outlet/>
+                </div>
+                <div className="d-none d-lg-block col-lg-4 col-xl-4">
+                    <WhoToFollowList/>
+                </div>
+            </div>
+        </Provider>
+    );
 };
 export default Tuiter;

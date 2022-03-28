@@ -1,0 +1,10 @@
+.overlap {
+    position: relative;
+    left: 15px;
+    bottom: 80px;
+    z-index: 5;
+}
+.btn-outline-dark {
+    color: white;
+    border-color: #585858;
+}

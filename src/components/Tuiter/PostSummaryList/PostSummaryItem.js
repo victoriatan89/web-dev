@@ -14,15 +14,16 @@ const PostSummaryItem = (
         <li className="list-group-item">
             <div className="d-flex justify-content-between">
                 <div className="me-4">
-                    <small className="opacity-25 mb-0">{post.topic}</small>
+                    {post.topic && <small className="opacity-25 mb-0">{post.topic}</small>}
                     <div className="d-flex align-items-center gap-1 mb-0">
-                        <span className="fw-bold">{post.userName}</span>
+                        {post.userName && <span className="fw-bold">{post.userName}</span>}
                         <i className="fa-solid fa-circle-check"/>
-                        <small className="opacity-25"> - {post.time}</small>
+                        {post.time && <small className="opacity-25"> - {post.time}</small>}
                     </div>
                     <p className="fw-bold mb-0">{post.title}</p>
                 </div>
-                <img src={post.image} alt="post" width="80" height="80" className="rounded align-self-center"/>
+                {post.image && <img src={post.image} alt="post" width="80" height="80"
+                                    className="rounded align-self-center"/>}
             </div>
         </li>
     );
