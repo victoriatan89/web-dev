@@ -1,7 +1,6 @@
 import React from "react";
-import {useDispatch} from "react-redux";
-import TuitStats from "../TuitStats";
 import './TuitListItem.css'
+import TuitStats from "../TuitStats";
 
 const TuitListItem = (
     {
@@ -30,30 +29,23 @@ const TuitListItem = (
             }
         }
     }) => {
-    const dispatch = useDispatch();
-    const deleteTuit = (tuit) => {
-        dispatch({
-            type: 'delete-tuit',
-            tuit
-        });
-    };
     return(
-        <li className="list-group-item d-flex py-3">
-            <img src={tuit.avatar_image} alt="icon"
-                 width="45px" height="45px"
-                 className="flex-shrink-0 rounded-circle me-3" />
+        <div className="d-flex py-3">
+            {tuit.avatar_image &&
+                <img src={tuit.avatar_image} alt="icon" width="45px" height="45px"
+                     className="flex-shrink-0 rounded-circle me-3" />
+            }
             <div className="w-100">
-                <div className="d-flex justify-content-between">
+                {tuit.postedBy && tuit.postedBy.username &&
                     <p className="mb-0 fw-bold">
                         {tuit.postedBy.username}
                         {tuit.verified && <i className="fa-solid fa-circle-check ps-1"/>}
-                        <small className="opacity-50 fw-normal"> @{tuit.handle} - {tuit.time}</small>
+                        {tuit.handle && <small className="opacity-50 fw-normal"> @{tuit.handle}</small>}
+                        {tuit.time && <small className="opacity-50 fw-normal"> - {tuit.time}</small>}
                     </p>
-                    <i className="fa-solid fa-xmark opacity-100"
-                       onClick={() => deleteTuit(tuit)}/>
-                </div>
-                <p>{tuit.tuit}</p>
-                {tuit.attachments !== undefined && tuit.attachments.video !== undefined ?
+                }
+                {tuit.tuit && <p>{tuit.tuit}</p>}
+                {tuit.attachments && tuit.attachments.video &&
                     <div style={{"borderRadius": "15px", "overflow": "hidden"}}
                          className="video-responsive mb-3">
                     <iframe
@@ -62,16 +54,16 @@ const TuitListItem = (
                         allow="autoplay; encrypted-media"
                         allowFullScreen
                         title="video" />
-                    </div> : ''
+                    </div>
                 }
-                {tuit.attachments !== undefined && tuit.attachments.image !== undefined ?
+                {tuit.attachments && tuit.attachments.image &&
                     <div style={{"borderRadius": "15px", "overflow": "hidden"}} className="mb-3">
                         <img src={tuit.attachments.image} alt="Tuit" width="100%"/>
-                    </div> : ''
+                    </div>
                 }
                 <TuitStats tuit={tuit}/>
             </div>
-        </li>
+        </div>
     );
 }
 export default TuitListItem;
