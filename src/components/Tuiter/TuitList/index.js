@@ -10,7 +10,7 @@ const TuitList = () => {
     // useEffect hook declares a function callback to be invoked when the component first loads.
     useEffect(() =>
         findAllTuits(dispatch),
-        []);
+        [dispatch]);
     return (
         <ul className="list-group mb-2">
             <li className="list-group-item">
