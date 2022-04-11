@@ -36,11 +36,11 @@ const TuitList = () => {
                                 <i className="far fa-thumbs-up ms-2"
                                    onClick={() => updateTuit(dispatch, {...tuit, likes: tuit.likes + 1})}/>
                             </div>
-                            <div>
+                            {/*<div>
                                 Dislikes: {tuit.dislikes}
                                 <i className="far fa-thumbs-down ms-2"
                                    onClick={() => updateTuit(dispatch, {...tuit, dislikes: tuit.dislikes + 1})}/>
-                            </div>
+                            </div>*/}
                         </li>
                     )
                 })
